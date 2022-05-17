@@ -14,4 +14,7 @@ router.post("/usuario",UsuarioController.CreateUsuario)
 
 router.post("/tarefa",TarefaController.newTarefa)
 router.delete("/tarefa",TarefaController.deleteTarefa)
+router.put("/tarefa",TarefaController.updateTarefa)
+
+
 module.exports = router

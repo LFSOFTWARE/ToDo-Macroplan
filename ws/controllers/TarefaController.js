@@ -66,6 +66,22 @@ class TarefaController {
 
 
     async updateTarefa(req, res) {
+        try {
+            const { estado, _id } = req.body
+
+            await Tarefa.findByIdAndUpdate(_id,{estado}).then((result) => {
+                res.status(200)
+                res.json({ error: false, message: 'OK' })
+            }).catch((err) => {
+                res.status(400)
+
+                res.json({ error: true, message: err.message })
+            });
+        } catch (error) {
+            res.status(400)
+
+            res.json({ error: true, message: error.message })
+        }
 
     }
 
