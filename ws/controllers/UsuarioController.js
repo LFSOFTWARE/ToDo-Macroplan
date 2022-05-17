@@ -7,7 +7,22 @@ class UsuarioController {
 
 
     async getAllUsuario(req, res) {
+        try {
 
+            await Usuario.find().then((result) => {
+                res.status(200)
+                res.json({ error: false, message: "OK" ,usuarios:result})
+            }).catch((err) => {
+                res.status(400)
+                res.json({ error: true, message: err.message })
+            });
+
+
+
+        } catch (error) {
+            res.status(400)
+            res.json({ error: true, message: err.message })
+        }
     }
 
     async CreateUsuario(req, res) {
@@ -18,7 +33,7 @@ class UsuarioController {
             await new Usuario({
                 nome
             }).save()
-            
+
             res.status(200)
             res.json({ error: false, message: "OK" })
 
@@ -32,7 +47,25 @@ class UsuarioController {
 
 
     async DeleteUsuario(req, res) {
+        try {
+            const { idUser } = req.body 
 
+            await Usuario.deleteOne({ _id: idUser }).then((result) => {
+                res.status(200)
+                res.json({ error: false, message: 'OK' })
+            }).catch((err) => {
+                res.status(400)
+
+                res.json({ error: true, message: err.message })
+            });
+
+
+
+        } catch (error) {
+            res.status(400)
+
+            res.json({ error: true, message: error.message })
+        }
     }
 
 }
