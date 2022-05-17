@@ -46,3 +46,9 @@ justify-content: space-evenly;
 width:10vw;
 
 `
+
+export const Imagem = styled.img`
+
+width: 100px;
+height: 10vh;
+`
