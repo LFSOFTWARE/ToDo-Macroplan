@@ -10,5 +10,8 @@ const UsuarioController = require("../controllers/UsuarioController")
 
 router.post("/usuario",UsuarioController.CreateUsuario)
 
+//Tarefa 
 
+router.post("/tarefa",TarefaController.newTarefa)
+router.delete("/tarefa",TarefaController.deleteTarefa)
 module.exports = router
