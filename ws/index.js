@@ -9,9 +9,9 @@ app.use(express.json())
 app.set('port',process.env.port||8000)
 
 
-// const routes = require("./src/routes/api.routes")
+const routes = require("./routes/routes")
 
-// app.use("/",routes)
+app.use("/",routes)
 
 app.listen(app.get('port'),()=>{
     console.log("SERVER IS UP => "+app.get('port'));

@@ -11,6 +11,8 @@ const Tarefa = new Schema({
         required: true
     },
     estado:{
+        type: String,
+
         enum: ['F','P'], // FEITO,PENDENTE
         default:'P'
     },
