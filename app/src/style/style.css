@@ -1,0 +1,13 @@
+.feito{
+    text-decoration: line-through;
+}
+
+.desc{
+    width: 70%;
+    max-width: 70%;
+}
+
+
+.cardHover:hover {
+    background: #F2F2FC;
+}

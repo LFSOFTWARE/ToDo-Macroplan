@@ -1,21 +1,49 @@
-import React from "react";
-import {Card, Container, Feed, Menu,Box} from "../../style/style";
+import React, { useContext, useEffect, useState } from "react";
+import { TarefaContext } from "../../providers/Tarefa";
+import { Card, Box } from "../../style/style";
 
-const Tarefa = ()=>{
-    return(
-        <Card >
-                <p>
-                    descrição  descriçãodescriçãodescriçãodescriçãodescrição
-                </p>
-                <p>
-                    Usuario: luiz
-                </p>
+import '../../style/style.css'
+const Tarefa = () => {
+    const { tarefas } = useContext(TarefaContext)
+
+    const Descricao = ({ data }) => {
+        const [teste, setTest] = useState(false)
+
+        return (
+
+            <Card className="cardHover" >
+                <div className="desc">
+                    <p onClick={() => {
+                        setTest(true)
+                    }} className={teste == false ? 'pendente' : 'feito'}>
+                        {data.descricao}
+                    </p>
+                </div>
+
                 <Box >
-                    <p>editar</p>
-                    <p>excluir</p>
-                    
+                    <button type="button" class="btn btn-secondary">Editar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+
                 </Box>
-                </Card>
+            </Card>
+        )
+
+
+    }
+
+
+
+    return (
+        <>
+            {tarefas.map((tarefa) => (
+                <Descricao data={tarefa} />
+            ))
+
+
+            }
+
+        </>
+
     )
 }
 

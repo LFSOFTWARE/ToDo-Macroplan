@@ -1,17 +1,32 @@
 import styled from 'styled-components'
 
 
-export const  Menu = styled.div`
+export const Header = styled.header`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+`
+
+export const Menu = styled.div`
 background:#4E97F5;
 width:25%;
 height:95vh;
+text-align: center;
+align-items: center;
+padding:5% 0;
+
+display: flex;
+flex-direction: column;
+justify-content: space-around;
 `
 
-export const  Feed = styled.div`
+export const Feed = styled.div`
 width:75%;
 height:95vh;
 text-align: center;
 background:#FFFEFE;
+border : 0.1px solid gray;
 
 `
 
@@ -24,7 +39,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding:5%
+padding:5%;
 `
 
 export const Card = styled.div`
@@ -32,10 +47,9 @@ width: 100%;
 height: 10vh;
 display: flex;
 justify-content: space-evenly;
-border : 1px solid gray;
 align-items: center;
 background:#F8F8FA;
-margin-top:1%;
+cursor:pointer;
 
 `
 
@@ -49,6 +63,20 @@ width:10vw;
 
 export const Imagem = styled.img`
 
-width: 100px;
-height: 10vh;
+width:15vh;
+height: 15vh;
+border-radius:100%
+`
+
+export const Texto = styled.p`
+
+
+
+`
+
+export const Spacer = styled.div`
+    width:${props => props.width ? props.width +'px' : '100px'};
+    height: 2vh;
+
+
 `
