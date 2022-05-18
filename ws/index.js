@@ -6,6 +6,10 @@ const database = require("./database")
 
 app.use(morgan('dev'))
 app.use(express.json())
+
+const cors = require('cors')
+
+app.use(cors())
 app.set('port',process.env.port||8000)
 
 
