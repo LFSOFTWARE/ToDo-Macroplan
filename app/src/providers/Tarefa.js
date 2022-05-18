@@ -5,21 +5,34 @@ export const TarefaContext = React.createContext({})
 
 
 export const TarefaProvider = (props) => {
+    //Contexto das tarefas
     const [tarefas, setTarefas] = useState([])
+    //Contexto doss usuarios
     const [usuarios, setUsuarios] = useState([])
 
-    const getTarefas = async () => {
-        const response = await api.get('/tarefa')
-        const res = response.data
+    //atualiza os dados para o fronte
+    const[reflash,setReflash] = useState(false)
 
-        if (res.error) {
-            alert(res.message)
+
+    //consome api para pegar as tarefas
+    const getTarefas = async () => {
+        try {
+            const response = await api.get('/tarefa')
+            const res = response.data
+
+            if (res.error) {
+                alert(res.message)
+                return false
+            }
+
+            setTarefas(res.tarefas)
+        } catch (error) {
+            alert(error.message)
             return false
         }
-
-        setTarefas(res.tarefas)
     }
 
+    //consome api para pegar os usuarios
     const getUsuarios = async () => {
         const response = await api.get('/usuario')
         const res = response.data
@@ -29,7 +42,7 @@ export const TarefaProvider = (props) => {
             return false
 
         }
-       
+
         setUsuarios(res.usuarios)
     }
 
@@ -39,9 +52,10 @@ export const TarefaProvider = (props) => {
     useEffect(() => {
         getTarefas()
         getUsuarios()
-    }, [])
+        setReflash(false)
+    }, [reflash])
     return (
-        <TarefaContext.Provider value={{ tarefas,usuarios }} >
+        <TarefaContext.Provider value={{ tarefas,setTarefas, usuarios,setReflash }} >
 
             {props.children}
         </TarefaContext.Provider>

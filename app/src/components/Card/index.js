@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TarefaContext } from "../../providers/Tarefa";
-import { Card, Box } from "../../style/style";
+import { Card, Box, Container } from "../../style/style";
 
 import '../../style/style.css'
 const Tarefa = () => {
     const { tarefas } = useContext(TarefaContext)
   
-    
 
 
     const Descricao = ({ data }) => {
@@ -24,8 +23,8 @@ const Tarefa = () => {
                 </div>
 
                 <Box >
-                    <button type="button" class="btn btn-secondary">Editar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" className="btn btn-secondary">Editar</button>
+                    <button type="button" className="btn btn-danger">Excluir</button>
 
                 </Box>
                 
@@ -35,16 +34,20 @@ const Tarefa = () => {
 
     }
 
-
+    
 
     return (
-        <>
-            {tarefas.map((tarefa) => (
+        <>  
+        <div className="boxTarefas">
+        {tarefas?.map((tarefa) => (
                 <Descricao data={tarefa} />
             ))
 
 
             }
+        </div>
+       
+          
 
         </>
 
