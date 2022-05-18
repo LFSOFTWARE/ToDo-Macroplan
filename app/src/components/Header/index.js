@@ -1,28 +1,28 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import { TarefaContext } from "../../providers/Tarefa";
 import api from "../../service/api";
 import { Header } from '../../style/style'
 
 const HeaderC = () => {
-    const { usuarios,setTarefas,tarefas,setReflash } = useContext(TarefaContext)
+    const { usuarios, setTarefas, tarefas, setReflash } = useContext(TarefaContext)
 
 
-    const [novaTarefa,setNovaTarefa] = useState({
-        descricao:'',
-        userId:''
+    const [novaTarefa, setNovaTarefa] = useState({
+        descricao: '',
+        userId: ''
     })
 
 
-    const createTarefa = async ()=>{
+    const createTarefa = async () => {
         try {
-             const response = await api.post('/tarefa',{
-                descricao:novaTarefa.descricao,
-                userId:novaTarefa.userId
-             })
-             var array = tarefas
-             array.push(novaTarefa)
-             setTarefas(array)
-             setReflash(true)
+            const response = await api.post('/tarefa', {
+                descricao: novaTarefa.descricao,
+                userId: novaTarefa.userId
+            })
+            var array = tarefas
+            array.push(novaTarefa)
+            setTarefas(array)
+            setReflash(true)
 
         } catch (error) {
             alert(error.message)
@@ -30,13 +30,19 @@ const HeaderC = () => {
     }
 
     return (
-        <Header>
-            <div className="box">
-                <h1 >Tarefas</h1>
+        <Header className="container">
 
-            </div>
-            <div >
-                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Adicionar</button>
+            <br />
+            <div className="container mt-4">
+                <h4>
+                    Tarefas
+                </h4>
+
+
+
+                <div class="d-grid gap-2 col-6 mx-auto mb-5">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Criar tarefa</button>
+                </div>
 
             </div>
 
@@ -50,14 +56,14 @@ const HeaderC = () => {
                         <div className="modal-body">
                             <div className="container">
                                 <label for="descricao" className="form-label">Descrição</label>
-                                <input onChange={e=>setNovaTarefa({...novaTarefa,descricao:e.target.value})} type="email" className="form-control" id="descricao" aria-describedby="emailHelp" />
+                                <input onChange={e => setNovaTarefa({ ...novaTarefa, descricao: e.target.value })} type="email" className="form-control" id="descricao" aria-describedby="emailHelp" />
 
                                 <label for="usuario" className="form-label mt-4">Usuário</label>
-                                <select onChange={(e)=>setNovaTarefa({...novaTarefa,userId:e.target.value})} className="form-select" aria-label="Usuario" id="usuario">
+                                <select onChange={(e) => setNovaTarefa({ ...novaTarefa, userId: e.target.value })} className="form-select" aria-label="Usuario" id="usuario">
                                     <option selected>Selecione um usuário para a tarefa</option>
                                     {
-                                        usuarios?.map((usuario,index) => (
-                                            <option key={index} value={usuario._id}>{usuario.nome}</option>
+                                        usuarios?.map((usuario, index) => (
+                                            <option key={index} value={usuario.user._id}>{usuario.user.nome}</option>
 
                                         ))
 
@@ -67,7 +73,7 @@ const HeaderC = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" className="btn btn-primary" onClick={()=>{createTarefa()}}>Adicionar</button>
+                            <button type="button" className="btn btn-primary" onClick={() => { createTarefa() }}>Adicionar</button>
                         </div>
                     </div>
                 </div>

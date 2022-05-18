@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Menu, Imagem } from "../../style/style";
 import '../../style/style.css'
-import Tarefas from "../Tarefas";
 import Usuarios from "../Usuarios";
+import Tarefas from '../Tarefas'
+import { TarefaContext } from "../../providers/Tarefa";
+
+
 const Home = () => {
+    const { page,setPage } = useContext(TarefaContext)
 
 
 
@@ -16,11 +20,17 @@ const Home = () => {
                     <h3>LUIZ FERNANDO</h3>
                 </div>
                 <div>
-                    <h4>Usuarios</h4>
-                    <h4>Tarefas</h4>
+                    <h4 onClick={()=> setPage('U')}>Usuarios</h4>
+                    <h4 onClick={()=> setPage('H')}>Tarefas</h4>
                 </div>
             </Menu>
-            <Usuarios />
+            {page === 'U' &&
+                <Usuarios />
+            }
+
+            {page === 'H' &&
+                <Tarefas />
+            }
         </Container >
     )
 }

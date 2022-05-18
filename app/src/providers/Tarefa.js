@@ -9,9 +9,10 @@ export const TarefaProvider = (props) => {
     const [tarefas, setTarefas] = useState([])
     //Contexto doss usuarios
     const [usuarios, setUsuarios] = useState([])
-
     //atualiza os dados para o fronte
     const[reflash,setReflash] = useState(false)
+    
+    const [page,setPage] = useState('H') //H => home, u=> usuarios
 
 
     //consome api para pegar as tarefas
@@ -55,7 +56,7 @@ export const TarefaProvider = (props) => {
         setReflash(false)
     }, [reflash])
     return (
-        <TarefaContext.Provider value={{ tarefas,setTarefas, usuarios,setReflash }} >
+        <TarefaContext.Provider value={{ tarefas,setTarefas, usuarios,setReflash,page,setPage }} >
 
             {props.children}
         </TarefaContext.Provider>

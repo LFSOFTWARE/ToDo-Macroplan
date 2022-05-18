@@ -9,7 +9,7 @@ const Tarefas = ()=>{
         <Feed className="container ">
             <HeaderC />
             <br />
-            <Tarefa />
+            <Tarefa className="mt-5" />
 
         </Feed>
     )
