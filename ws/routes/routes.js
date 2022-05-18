@@ -14,7 +14,7 @@ router.delete("/usuario",UsuarioController.DeleteUsuario)
 //Tarefa 
 router.get("/tarefa",TarefaController.getAllTarefas)
 router.post("/tarefa",TarefaController.newTarefa)
-router.delete("/tarefa",TarefaController.deleteTarefa)
+router.delete("/tarefa/:idTarefa",TarefaController.deleteTarefa)
 router.put("/tarefa",TarefaController.updateTarefa)
 
 

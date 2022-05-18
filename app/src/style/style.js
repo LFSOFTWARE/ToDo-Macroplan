@@ -73,7 +73,12 @@ export const Texto = styled.p`
 
 
 `
+export const Icon = styled.i`
+font-size:30px;
+color:${props => props.color?props.color:'black'}
 
+
+`
 export const Spacer = styled.div`
     width:${props => props.width ? props.width +'px' : '100px'};
     height: 2vh;

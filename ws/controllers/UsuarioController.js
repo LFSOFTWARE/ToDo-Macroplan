@@ -1,3 +1,4 @@
+const Tarefa = require("../models/Tarefa");
 const Usuario = require("../models/Usuario")
 
 class UsuarioController {
@@ -9,9 +10,23 @@ class UsuarioController {
     async getAllUsuario(req, res) {
         try {
 
-            await Usuario.find().then((result) => {
+            await Usuario.find().then(async(result) => {
+                var finalUsers = []
+
+               for(let user of result){
+                  var tarefas = await  Tarefa.find({userId:user._id})
+
+                 var userTarefa  = {
+                      user:user,
+                      tarefas
+                  }
+
+                  finalUsers.push(userTarefa)
+               }
+
+
                 res.status(200)
-                res.json({ error: false, message: "OK" ,usuarios:result})
+                res.json({ error: false, message: "OK" ,usuarios:finalUsers})
             }).catch((err) => {
                 res.status(400)
                 res.json({ error: true, message: err.message })
