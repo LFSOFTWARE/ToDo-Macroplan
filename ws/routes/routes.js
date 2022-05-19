@@ -12,7 +12,7 @@ router.post("/usuario",UsuarioController.CreateUsuario)
 router.delete("/usuario/:idUser",UsuarioController.DeleteUsuario)
 
 //Tarefa 
-router.get("/tarefa",TarefaController.getAllTarefas)
+router.get("/tarefa/:idUser",TarefaController.getAllTarefas)
 router.post("/tarefa",TarefaController.newTarefa)
 router.delete("/tarefa/:idTarefa",TarefaController.deleteTarefa)
 router.put("/tarefa",TarefaController.updateTarefa)

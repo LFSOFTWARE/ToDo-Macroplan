@@ -8,7 +8,17 @@ class TarefaController {
     // Tela para alterar o estado da tarefa (Pendente, Em Execução, Finalizada). 
 
     async getAllTarefas(req, res) {
-        await Tarefa.find({}).then((result) => {
+        const {idUser} = req.params
+        var filtro = {
+
+        }
+        if(idUser != 'all'){
+            filtro = {
+                userId:idUser
+            }
+        }
+       
+        await Tarefa.find(filtro).then((result) => {
             res.status(200)
             res.json({ error: false, message: 'OK', tarefas: result })
         }).catch((err) => {

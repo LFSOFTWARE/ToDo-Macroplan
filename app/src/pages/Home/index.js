@@ -9,10 +9,12 @@ import Login from "../../components/Login";
 const Home = () => {
     const { page,setPage,user } = useContext(TarefaContext)
 
-
+    
 
     return (
         <Container >
+                <Login />
+        
             <Menu>
                 <div>
                     <Imagem src="https://img.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="Minha Figura" />
@@ -31,7 +33,6 @@ const Home = () => {
                 <Tarefas />
             }
 
-            
         </Container >
     )
 }

@@ -14,12 +14,14 @@ export const TarefaProvider = (props) => {
     //Gerencia se vai apresentar a pagina home ou usuarios
     const [page, setPage] = useState('H') //H => home, u=> usuarios
 
-    const [user, setUser] = useState({nome:'Luiz Fernando',_id:''})
+    const [user, setUser] = useState({nome:'Gast',_id:''})
 
     //consome api para pegar as tarefas
     const getTarefas = async () => {
         try {
-            const response = await api.get('/tarefa')
+     
+            const filtro = user._id === ''?'all':user._id
+            const response = await api.get(`/tarefa/${filtro}`)
             const res = response.data
 
             if (res.error) {

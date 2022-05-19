@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { TarefaContext } from "../../providers/Tarefa";
 import api from "../../service/api";
-import { Header } from '../../style/style'
+import { Header, Icon } from '../../style/style'
 
 const HeaderC = () => {
     const { usuarios, setTarefas, tarefas, setReflash } = useContext(TarefaContext)
@@ -35,7 +35,11 @@ const HeaderC = () => {
             <br />
             <div className="container mt-4">
                 <h4>
-                    Tarefas
+                    Suas Tarefas     <Icon 
+                     className="fa fa-book"
+                      aria-hidden="true"
+                   
+                   />
                 </h4>
                 <div class="d-grid gap-2 col-6 mx-auto mb-5">
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Criar tarefa</button>

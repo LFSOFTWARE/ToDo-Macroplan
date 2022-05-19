@@ -48,7 +48,11 @@ const Usuarios = () => {
             <br />
             <div className="container">
                 <h4>
-                    Usuarios
+                    Usuarios <Icon 
+                     className="fa fa-user-plus"
+                      aria-hidden="true"
+                   
+                   />
                 </h4>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Criar usuário</button>

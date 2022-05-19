@@ -75,6 +75,7 @@ export const Texto = styled.p`
 `
 export const Icon = styled.i`
 font-size:30px;
+padding:10px;
 color:${props => props.color?props.color:'black'}
 
 
