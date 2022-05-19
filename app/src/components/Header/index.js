@@ -37,9 +37,6 @@ const HeaderC = () => {
                 <h4>
                     Tarefas
                 </h4>
-
-
-
                 <div class="d-grid gap-2 col-6 mx-auto mb-5">
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Criar tarefa</button>
                 </div>

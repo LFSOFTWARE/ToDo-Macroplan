@@ -10,10 +10,11 @@ export const TarefaProvider = (props) => {
     //Contexto doss usuarios
     const [usuarios, setUsuarios] = useState([])
     //atualiza os dados para o fronte
-    const[reflash,setReflash] = useState(false)
-    
-    const [page,setPage] = useState('H') //H => home, u=> usuarios
+    const [reflash, setReflash] = useState(false)
+    //Gerencia se vai apresentar a pagina home ou usuarios
+    const [page, setPage] = useState('H') //H => home, u=> usuarios
 
+    const [user, setUser] = useState({nome:'Luiz Fernando',_id:''})
 
     //consome api para pegar as tarefas
     const getTarefas = async () => {
@@ -56,7 +57,16 @@ export const TarefaProvider = (props) => {
         setReflash(false)
     }, [reflash])
     return (
-        <TarefaContext.Provider value={{ tarefas,setTarefas, usuarios,setReflash,page,setPage }} >
+        <TarefaContext.Provider value={{
+              tarefas, 
+              setTarefas,
+              usuarios, 
+              setReflash,
+               page, 
+               setPage, 
+               user, 
+               setUser 
+               }} >
 
             {props.children}
         </TarefaContext.Provider>

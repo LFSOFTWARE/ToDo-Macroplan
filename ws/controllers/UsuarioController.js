@@ -63,7 +63,7 @@ class UsuarioController {
 
     async DeleteUsuario(req, res) {
         try {
-            const { idUser } = req.body 
+            const { idUser } = req.params 
 
             await Usuario.deleteOne({ _id: idUser }).then((result) => {
                 res.status(200)

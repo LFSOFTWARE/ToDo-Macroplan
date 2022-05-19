@@ -11,7 +11,7 @@ justify-content: center;
 export const Menu = styled.div`
 background:#4E97F5;
 width:25%;
-height:95vh;
+height:100vh;
 text-align: center;
 align-items: center;
 padding:5% 0;
@@ -22,8 +22,8 @@ justify-content: space-around;
 `
 
 export const Feed = styled.div`
-width:75%;
-height:95vh;
+width: 100vw;
+height: 100vh;
 text-align: center;
 background:#FFFEFE;
 border : 0.1px solid gray;
@@ -39,7 +39,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding:5%;
+
 `
 
 export const Card = styled.div`
@@ -56,8 +56,8 @@ cursor:pointer;
 export const Box = styled.div`
 
 display: flex;
-justify-content: space-evenly;
-width:10vw;
+justify-content: space-between;
+width:14vw;
 
 `
 

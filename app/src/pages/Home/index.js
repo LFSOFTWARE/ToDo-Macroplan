@@ -7,8 +7,7 @@ import { TarefaContext } from "../../providers/Tarefa";
 
 
 const Home = () => {
-    const { page,setPage } = useContext(TarefaContext)
-
+    const { page,setPage,user } = useContext(TarefaContext)
 
 
 
@@ -17,7 +16,7 @@ const Home = () => {
             <Menu>
                 <div>
                     <Imagem src="https://img.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="Minha Figura" />
-                    <h3>LUIZ FERNANDO</h3>
+                    <h3>{user.nome}</h3>
                 </div>
                 <div>
                     <h4 onClick={()=> setPage('U')}>Usuarios</h4>
@@ -31,6 +30,8 @@ const Home = () => {
             {page === 'H' &&
                 <Tarefas />
             }
+
+            
         </Container >
     )
 }

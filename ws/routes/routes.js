@@ -9,7 +9,7 @@ const UsuarioController = require("../controllers/UsuarioController")
 //Usuario
 router.get("/usuario",UsuarioController.getAllUsuario)
 router.post("/usuario",UsuarioController.CreateUsuario)
-router.delete("/usuario",UsuarioController.DeleteUsuario)
+router.delete("/usuario/:idUser",UsuarioController.DeleteUsuario)
 
 //Tarefa 
 router.get("/tarefa",TarefaController.getAllTarefas)

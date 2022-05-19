@@ -13,7 +13,7 @@ const Tarefa = new Schema({
     estado:{
         type: String,
 
-        enum: ['F','P'], // FEITO,PENDENTE
+        enum: ['F','P','E'], // FEITO,PENDENTE,EM Execução
         default:'P'
     },
     userId:{
