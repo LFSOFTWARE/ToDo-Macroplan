@@ -12,17 +12,19 @@ const Home = () => {
     
 
     return (
-        <Container >
+        <Container className="mobile">
                 <Login />
-        
-            <Menu>
+
+            <Menu  className="mobile">
                 <div>
                     <Imagem src="https://img.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="Minha Figura" />
                     <h3>{user.nome}</h3>
                 </div>
-                <div>
-                    <h4 onClick={()=> setPage('U')}>Usuarios</h4>
-                    <h4 onClick={()=> setPage('H')}>Tarefas</h4>
+                <div>   
+                    
+                    <h4 className="botao" onClick={()=> setPage('U')}>Usuarios</h4>
+
+                    <h4 className="botao" onClick={()=> setPage('H')}>Tarefas</h4>
                 </div>
             </Menu>
             {page === 'U' &&

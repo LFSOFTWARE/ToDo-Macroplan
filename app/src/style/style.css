@@ -33,3 +33,17 @@
 .selec{
     max-width: 11vw;
 }
+
+
+.botao{
+    cursor: pointer;
+}
+
+.botao:hover{
+    color: white;
+}
+
+.modile{
+    flex-direction: row;
+}
+

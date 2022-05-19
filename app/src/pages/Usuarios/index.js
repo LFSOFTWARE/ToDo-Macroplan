@@ -107,6 +107,10 @@ const Usuarios = () => {
                                                     <Icon className="fa fa-spinner" aria-hidden="true"></Icon>
 
                                                 }
+                                                 {tarefa.estado == 'E' &&
+                                                    <Icon className="fa fa-hand-rock-o" aria-hidden="true"></Icon>
+
+                                                }
                                             </td>
                                         </tr>
                                     ))}
