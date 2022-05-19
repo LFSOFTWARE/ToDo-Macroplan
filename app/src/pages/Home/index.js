@@ -4,7 +4,7 @@ import '../../style/style.css'
 import Usuarios from "../Usuarios";
 import Tarefas from '../Tarefas'
 import { TarefaContext } from "../../providers/Tarefa";
-
+import Login from "../../components/Login";
 
 const Home = () => {
     const { page,setPage,user } = useContext(TarefaContext)
