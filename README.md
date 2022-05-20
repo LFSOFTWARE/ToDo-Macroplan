@@ -15,3 +15,15 @@ Como rodar:
 	#1 Faça o clone do projeto<br/>
 	#2 Entre na pasta app<br/>
 	#3 Digite no terminal: npm start 
+	
+Telas:<br/>
+
+
+![image](https://user-images.githubusercontent.com/78454799/169563000-655c1a7b-f0f0-405e-b8c9-034e9bab4992.png)<br/>
+Descrição: você poderá escolher um usuario para ver as tarefas na home.
+
+![image](https://user-images.githubusercontent.com/78454799/169563462-427a73a4-a0e6-42ce-92a6-69d3f80c4c5b.png)<br/>
+Descrição:Com usuário selecionado você verá as tarefas do mesmo. 
+
+
+
