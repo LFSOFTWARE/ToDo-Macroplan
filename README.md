@@ -25,5 +25,10 @@ Descrição: você poderá escolher um usuario para ver as tarefas na home.
 ![image](https://user-images.githubusercontent.com/78454799/169563462-427a73a4-a0e6-42ce-92a6-69d3f80c4c5b.png)<br/>
 Descrição:Com usuário selecionado você verá as tarefas do mesmo. 
 
+![image](https://user-images.githubusercontent.com/78454799/169563895-f6243c30-6afc-4ac8-b557-3e2b4a857374.png)<br/>
+Descrição:Você pode criar tarefa, para tal vocÊ digita a descriçaçao e escolhe o usuário. podendo atribuir tarefas a outros. 
+
+![image](https://user-images.githubusercontent.com/78454799/169564397-d92f80d0-c71d-4971-9621-ae94303e718a.png)<br/>
+Descrição:Você pode excluir ou editar o estado da tarefa. quando em FINALIZADO o texto fica com uma decoração diferente. 
 
 
