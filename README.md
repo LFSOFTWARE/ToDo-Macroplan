@@ -14,7 +14,8 @@ Como rodar:
 
 	#1 Faça o clone do projeto<br/>
 	#2 Entre na pasta app<br/>
-	#3 Digite no terminal: npm start 
+	#3 Instale  as dependências necessárias com o comando npm install<br/>
+	#4 Digite no terminal: npm start 
 	
 Telas:<br/>
 
