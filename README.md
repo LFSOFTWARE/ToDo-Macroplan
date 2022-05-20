@@ -12,9 +12,9 @@ Tecnologias: <br/>
 Como rodar:
 	A API está rodando na heroku e o BD na mlab, portanto é preciso apenas rodar dentro da pasta app o npm start. <br/>
 
-	#1 Faça o clone do projeto<br/>
-	#2 Entre na pasta app<br/>
-	#3 Instale  as dependências necessárias com o comando npm install<br/>
+	#1 Faça o clone do projeto
+	#2 Entre na pasta app
+	#3 Instale  as dependências necessárias com o comando npm install
 	#4 Digite no terminal: npm start 
 	
 Telas:<br/>
